@@ -325,15 +325,10 @@ h1 {
         align-items: center;
     }
 
-    .lado-direito #imagem {
-        width: 80%;
-        height: auto;
-    }
-
     .lado-direito {
-        display: flex;
-        justify-content: center;
+        display: none;
     }
+    
 
     #logo-header {
         display: none;
