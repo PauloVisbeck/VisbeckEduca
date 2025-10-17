@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=League+Gothic&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titan+One&display=swap"
+        rel="stylesheet">
     <title>📖 VisbeckEduca</title>
 </head>
+
 <body>
     <nav>
         <img id="logo-header" src="./img/logoLivroAberto.png" alt="logo livro aberto">
@@ -13,16 +22,19 @@
         <a onclick="mostrarFormulario()" href="#">Fale Conosco</a>
         <a onclick="mostrarMensagem()" href="#">Nosso Portifólio</a>
     </nav>
-    
+
     <div class="container-principal">
         <div class="lado-esquerdo">
             <img id="logo-notebook" src="./img/LogoNotebookLivro.png" alt="notebook com livros">
 
             <h2>📖 Com a Visbeck Educa sua carreira proficional vai muito além!</h2>
-                        
-            <p>Aqui você encontra o curso certo para o desenvolvimento proficional, seja pessoal ou de sua equipe. Navegue pelo nosso portifólio ou entre em contato com nosso time. Será um prazer ajudar no seu desenvolvimento!</p>           
-           
-            <button onclick="mostrarFormulario()" title="Clique para solicitar um orçamento!" id="botaoContato">Falar com o time</button>
+
+            <p>Aqui você encontra o curso certo para o desenvolvimento proficional, seja pessoal ou de sua equipe.
+                Navegue pelo nosso portifólio ou entre em contato com nosso time. Será um prazer ajudar no seu
+                desenvolvimento!</p>
+
+            <button onclick="mostrarFormulario()" title="Clique para solicitar um orçamento!" id="botaoContato">Falar
+                com o time</button>
         </div>
 
         <div class="lado-direito">
@@ -39,32 +51,29 @@
     <a id="logo-wpp" href="https://wa.me/55479937?text=Falar+com+o+time+Visbeck+Educa">
         <img src="./img/whatsapp.png" alt="link para whatsapp">
     </a>
-    
+
     <!-- A mascara abaixo será aplicada sobre tudo, porém não será aplicada sobre o formulário. Através do JavaScript essa mascara será aplicada somente quando o botão Entre em Contato for clicado. Além da mascara o formulário será posicionado no centro da tela. -->
     <div onclick="esconderFormulario()" class="mascara-formulario"></div>
 
-    <form 
-        class="formulario-fale-conosco"
-        action="https://formcarry.com/s/AKcbZToYJJi"
-        method="POST"
+    <form class="formulario-fale-conosco" action="https://formcarry.com/s/AKcbZToYJJi" method="POST"
         enctype="multipart/form-data">
-            <input type="text" name="Nome" placeholder="Seu nome" id="nome" oninput="checkForm()">            
-            <input type="tel" name="Telefone" placeholder="Telefone" id="telefone" oninput="checkForm()">            
-            <textarea name="Solicitação" id="" placeholder="Em que podemos ajudá-lo?"></textarea>
-            <button id="botaoEnviar" type="submit" disabled>Enviar</button>                       
+        <input type="text" name="Nome" placeholder="Seu nome" id="nome" oninput="checkForm()">
+        <input type="tel" name="Telefone" placeholder="Telefone" id="telefone" oninput="checkForm()">
+        <textarea name="Solicitação" id="" placeholder="Em que podemos ajudá-lo?"></textarea>
+        <button id="botaoEnviar" type="submit" disabled>Enviar</button>
     </form>
 
     <div class="nosso-portifolio">
         <button onclick="esconderMensagem()" id="botaoFechar">X</button>
         <h1>Portifólio</h1>
-        <ul>            
+        <ul>
             <li id="li-01">Autoconhecimento</li>
             <li id="li-02">Excel Avançado</li>
             <li id="li-03">Análise de Dados</li>
             <li id="li-04">Acessibilidade e Tecnologia</li>
-        </ul>       
+        </ul>
     </div>
-    
+
 </body>
 
 <script src="./script.js"></script>
