@@ -32,7 +32,7 @@ function checkForm() {
     let nome = document.getElementById('nome').value.trim();
     let telefone = document.getElementById('telefone').value.trim();
     
-    // Verificar se ambos os campos estão preenchidos
+    
     if (nome && telefone) {
         document.getElementById('botaoEnviar').disabled = false;
     } else {
