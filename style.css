@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#logo-notebook {
+    height: 200px;
+}
+
+
+#logo-header {
+    height: 80px;
+    margin-right: 40px;
+}
+
+/*O id abaixo foi aplicado ao link (lá no html), e a imagem está dentro desse link. A forma abaixo irá aplicar a formatação para esse id, para todas as imagens que estiverem dentro dele. Também poderia ser usado uma classe no lugar do id (. no lugar de #) */
+#logo-wpp img {
+    height: 60px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+#botaoContato, #botaoEnviar {
+    background-color: #C51111;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 700;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+#botaoContato:hover {
+    background-color: blue;   
+    transition: 1s ease-in-out;
+}
+
+#botaoEnviar:hover {
+    background-color: blue;   
+    transition: 1s ease-in-out;
+}
+
+.lado-esquerdo {
+    /* display: inline-block; */
+    width: 40%;
+}
+
+/*.lado-direito {
+     display: inline-block;
+     width: 49.6%;
+}*/
+
+body {
+    height: 100vh;
+}
+
+.container-principal {
+    display: flex;
+    height: 100vh;
+    align-items: center; /*Alinha os itens (as divs) na vertical*/
+    /*justify-content: space-between; Cria um espaço (um pouco maior) entre os itens (as divs) */
+    justify-content: space-around; /*Cria um espaço (um pouco menor) entre os itens (as divs) */
+    padding: 100px;    
+}
+
+.container-imagem {
+    position: fixed;
+    top: 0px; /*Posiciona o vídeo a 0px em relação ao topo da pagina*/
+    z-index: -1; /*Coloca o vídeo como fundo. 1 = frente e -1 = atrás dos demais itens.*/
+}
+
+#imagemFundo {
+     width: 100vw;
+    /*As configurações abaixo foram aplicadas para que o video não quebre e sempre ocupe 100% da tela*/
+    /*min-height: 100%;
+    min-width: 100%;*/
+    position: fixed;
+    top: 0;
+}
+
+/*IMPORTANTE: Como a div mascara está dentro da div container-imagem e a mesma está posicionada atrás dos outros elementos, logo a div mascara também já estará atrás, bem como todas as formatações aplicadas a ela.*/
+
+.mascara {
+    width: 100%; /*Também poderia ser usado vw*/
+    height: 100%; /*Também poderia ser usado vh*/
+    background: linear-gradient(109deg, rgba(10,12,16,0.99) 10%, rgba(10,12,16,0.7) 50%, rgba(10,12,16,0.99) 95%);    
+    position: fixed;
+    top: 0;
+    /* opacity: 0.7; Defini o grau de transparencia da cor da div, dando um efeito sombreado (fumê) */
+}
+
+p {
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+h2 {
+    color: #cf7a44;    
+    line-height: 40px;
+}
+
+/*IMPORTANTE: O distanciamento entre os links que estão dentro da nav podem ser feitos atraves do "gap" conforme abaixo dentro da tag "nav", ou através de um "margin-left" que está comentado dentro da tag "a".*/
+
+nav {
+    margin-top: 10px;
+    margin-left: 20px;    
+    display: flex;
+    align-items: center;
+    gap: 30px; /*Está aplicando o distanciamento entre os links do cabeçalho */   
+}
+
+a {
+    text-decoration: none;
+    font-size: 30px;    
+    color: white;
+    /* margin-left: 30px; */ /* O distanciamento do cabeçalho poderia ser feito desse modo */   
+}
+
+a:hover {
+    color: #cf7a44;
+    font-size: 31px;
+    transition: 1s color ease-in-out; /* Coloca um efeito de transição na troca de cor do link*/
+    transition: 0.5s ease-in-out /*Um pouco mais rápido e com efeito de transição não apenas na cor*/
+}
+
+#botaoEnviar:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.formulario-fale-conosco {    
+    background-color: white;
+    display: flex;
+    gap: 20px; /*Distancia entre os itens*/
+    flex-direction: column; /*Coloca os inputs um abaixo do outro*/
+    position: fixed;
+    top: 30%;
+    left: -300px;
+    padding: 20px; /*Afasta os itens da borda do formulário*/
+    border-radius: 5px;
+    transition: left 1s ease-in-out; /*Quando muda a posição do left a transição do formulario é lenta*/  
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 5px; /*Cria distancia entre o placeholder e o input*/
+    outline-color: #18D80F; /*Cor da borda do input quando clica nele*/
+}
+
+textarea {
+    height: 100px;
+    width: 270px;
+    border-radius: 5px;
+    padding-left: 5px; /*Cria distancia entre o placeholder e o textarea*/
+    outline-color: #18D80F; /*Cor da borda do input quando clica nele*/
+}
+
+.mascara-formulario { 
+    visibility: hidden; /*Visibilidade setada como escondida (invisível)*/
+    position: fixed;
+    top: 0;   
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    transition: visibility 1s ease-in-out;
+}
+
+/*
+Inicial:
+    top: 30%
+    left: -300px
+Final:
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);       
+*/
+
+.nosso-portifolio {
+    display: flex;
+    flex-direction: column;    
+    position: fixed;
+    top: 30%;
+    right: -390px;    
+    background-color: #E6E6FA;
+    padding-left: 40px;    
+    border-radius: 5px;
+    height: 350px;
+    width: 400px;
+    transition: right 1s ease-in-out;   
+}
+
+#botaoFechar {  
+    background-color: blue;     
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    text-transform: uppercase;    
+    margin-bottom: 60px;
+    margin-left: 330px;
+    right: 0;
+}
+
+#botaoFechar:hover {
+    background-color: #C51111;   
+    transition: 1s ease-in-out;
+}
+
+li {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 5px;     
+}
+
+#li-01 {
+   color: #D2120B; 
+}
+
+#li-02 {
+    color: #08BF01; 
+ }
+
+ #li-03 {
+    color: #FFBD04; 
+ }
+
+ #li-04 {
+    color: #064FEF; 
+ }
+
+h1 {
+    /*Os três parâmetros abaixo deixam o efeito gradiente na fonte do título*/
+    background-image: linear-gradient(90deg, rgba(127,133,211,1) 0%, rgba(204,212,225,1) 56%, rgba(127,133,211,1) 100%);
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    margin-bottom: 5px;    
+}
+
+@media (max-width: 1100px) {
+    .container-principal {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .lado-esquerdo p {
+        display: none;        
+    }
+
+    .lado-esquerdo {
+        display: flex;
+        flex-direction: column;    
+        align-items: center;
+    }
+
+    .lado-direito #imagem {
+        width: 80%;
+        height: auto;
+    }
+
+    .lado-direito {
+        display: flex;
+        justify-content: center;
+    }
+
+    #logo-header {
+        display: none;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-left: 10px; 
+    }
+
+    a {
+        font-size: 20px;
+    }
+
+    a:hover {
+        font-size: 22px;
+    }
+}
